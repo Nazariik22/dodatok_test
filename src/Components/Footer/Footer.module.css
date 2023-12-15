@@ -1,0 +1,42 @@
+footer{
+    background: #72769B;
+   
+}
+.footer{
+    width: 1280px;
+    margin: auto;
+    padding: 50px 0;
+    color: white;
+    font-size: 24px;
+}
+.contact,.help{
+    flex-direction: row;
+    align-items: center;
+    gap: 25px;
+}
+
+
+.contact a img{
+    width: 50px;
+    height: 50px; 
+
+}
+.help {
+   margin-top: 30px;
+    gap: 20px;
+}
+.help span{
+    position: relative;
+}
+.help span:nth-child(-n+2)::after{
+    content: '';
+    position: absolute;
+    right: -12px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #ffffff;
+    top: 50%;
+    transform: translateY(-50%);
+  
+}

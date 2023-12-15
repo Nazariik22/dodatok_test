@@ -1,0 +1,88 @@
+.container{
+    padding: 70px 0 30px 0 ;
+    width: 100%;
+    background: #25B1FF;
+}
+.register {
+    display: flex;
+    flex-direction: column;
+    margin: 40px auto;
+    font-size: 12px;
+    gap: 10px;
+    width: 493px;
+    padding: 16px 45px;
+    border-radius: 26px;
+    background: white;
+}
+.register section {
+    gap: 10px;
+}
+.register .img{
+    width: 27px;
+    height: 27px;
+}
+.register input {
+    /*border-radius: 5px;*/
+    border: 2px solid #525573;
+    background: #7C82B2;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 405px;
+    height: 30px;
+    padding-left: 10px;
+    color: white;
+    font-size: 16px;
+  }
+.register input::placeholder,.register input::-moz-placeholder {
+    color: #2B2B2B;
+    font-size: 16px;
+    padding-left: 10px;
+}
+.register  h2 {
+    font-size: 32px;
+}
+.register p {
+
+    font-size: 16px;
+    font-weight: 400;
+}
+.button{
+    display: block;
+    width: 315px;
+    height: 53px;
+    margin:50px auto;
+    font-size: 24px;
+    color: white;
+    background: #EFBD50;
+    border-radius: 7px;
+    border: 2px solid #C99D3E;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 5px 0 0 0;
+}
+ .flex {
+    color: #2B2B2B;
+    display: flex;
+    gap: 15px;
+}
+
+ .blok {
+    width: 108px;
+    /*border-radius: 5px;*/
+    border: 2px solid #525573;
+    background: #7C82B2;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+} 
+.konf {
+    gap: 11px;
+    flex-direction: row;
+    margin-top: 20px;
+}
+.konf p {
+    font-size: 15px;
+}
+.konf p span {
+    color: #0047FF;
+}
+.konf input {
+    width: 20px;
+    height: 20px;
+}
