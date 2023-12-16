@@ -25,7 +25,7 @@ const initialState = {
 
     ],
     auto: false,
-    userId:null,
+    userId:1,
 }
 
 const userReduser = (state = initialState, action) => {

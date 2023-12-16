@@ -29,7 +29,7 @@ button {
   background: none;
 }
 
-button:hover {
+button:active {
   scale: 0.95;
 }
 .img {
