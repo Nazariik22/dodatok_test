@@ -3,7 +3,6 @@ import { Autorizathion } from "./Autorizathion";
 import { loginAC } from "../../redux/user-reduser";
 
 const mapStateToProps = (state) => {
-   
     return {
         user: state.user.person,
         auto: state.user.auto
