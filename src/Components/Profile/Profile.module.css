@@ -52,7 +52,14 @@
     flex-direction: column;
     gap: 40px;
 }
-
+.blok_info span, .blok_info p,.blok_info input{
+    height: 40px;
+}
+.blok_info input{
+    font-size: 20px;
+    border-radius: 10px;
+    padding-left: 10px;
+}
 .blok_info span {
     align-self: flex-start;
     padding-bottom: 5px;

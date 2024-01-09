@@ -8,7 +8,7 @@ const initialState = {
                 login: "nazarii",
                 password: "123",
                 sernameName: "Nazarii Krutiak",
-                tel: "954670150",
+                tel: "+380954670150",
                 email: "nazariik20@gmail.com",
             },
         },
@@ -18,7 +18,7 @@ const initialState = {
                 login: "1",
                 password: "1",
                 sernameName: "Nazarii Krutiak",
-                tel: "954670150",
+                tel: "+380954670150",
                 email: "nazariik20@gmail.com",
             },
         },
@@ -42,7 +42,6 @@ const userReduser = (state = initialState, action) => {
                 ],
             }
         case LOGIN:
-            console.log(state)
             return {
                 ...state,
                 auto: action.auto,

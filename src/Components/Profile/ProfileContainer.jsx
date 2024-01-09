@@ -3,7 +3,8 @@ import { Profile } from "./Profile";
 
 const mapStateToProps= (state)=>{
     return{
-
+        idUser:state.user.userId,
+        chekValue:state.personData.chekValue,
     }
 }
 const mapDispatchToProps= (dispatch)=>{
