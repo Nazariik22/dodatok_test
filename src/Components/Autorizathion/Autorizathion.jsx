@@ -4,12 +4,6 @@ import { NavLink } from 'react-router-dom';
 const Autorizathion = (props) => {
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
-    const handlLC = (e) => {
-        setLogin(e.target.value)
-    }
-    const handlPC = (e) => {
-        setPassword(e.target.value)
-    }
     const loginAuto = () => {
         props.user.forEach(element => {
             element.userInfo.login === login
@@ -17,7 +11,6 @@ const Autorizathion = (props) => {
                 && props.login(true, element.id)
 
         });
-
     }
     return (
         <div className={styles.container}>
@@ -28,13 +21,13 @@ const Autorizathion = (props) => {
                 <section>
                     <p >Логін/Електронна адреса:</p>
                     <input type="text" placeholder="Логін..."
-                        value={login} onChange={handlLC}
+                        value={login} onChange={(e)=>setLogin(e.target.value)}
                     />
                 </section>
                 <section>
                     <p>Пароль:</p>
                     <input type="password" placeholder="Пароль..."
-                        value={password} onChange={handlPC} />
+                        value={password} onChange={(e)=>setPassword(e.target.value)} />
                 </section>
                 <NavLink to={props.auto && '/'}
                     className={styles.button}
