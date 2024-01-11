@@ -1,0 +1,20 @@
+.section{
+    padding:50px 30px;
+    gap: 30px;
+    border-bottom: 2px solid rgba(148, 148, 148, 0.705);
+}
+.section input,.section textarea{
+    color: rgb(148, 148, 148);
+    padding: 10px;
+    border-radius: 10px;
+}
+.section input{
+    font-weight: 600;
+    font-size: 30px;
+}
+.section textarea{
+    font-size: 25px;
+    resize: none;
+    border: 1px solid rgba(148, 148, 148, 0.705);
+    margin-bottom: 30px;
+}
