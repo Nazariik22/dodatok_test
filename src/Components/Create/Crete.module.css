@@ -5,3 +5,18 @@
     width: 1280px;
     margin: auto;
 }
+.btn{
+    position: fixed;
+    top:50%;
+    right: 4%;
+    height:40px;
+    width:40px;
+    border-radius: 5px;
+    background: #6e6e6ead;
+    transform: translateY(-50%);
+    transition:all .2s linear;
+    font-size: 25px;
+}
+.btn:active{
+    background: #6e6e6e6b;
+}

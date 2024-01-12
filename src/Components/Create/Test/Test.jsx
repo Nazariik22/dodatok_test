@@ -1,31 +1,30 @@
+import { useDispatch, useSelector } from 'react-redux';
 import styles from './Test.module.css';
+import { buttonItemAC } from '../../../redux/create-reduser';
+import { TestItem } from './TestItem/TestItem';
 const Test = (props) => {
-    let fetch = false;
+    const questions_items = props.state.questions_items;
+    const dispatch = useDispatch();
     return (
         <section className={styles.section}>
             <div className={`${styles.flex} ${styles.title}`}>
                 <input type="text"
                     placeholder='Ввведіть запитання' />
-                {fetch
-                    ? <button>Одна відповідь</button>
-                    : <button>Декілька відповідей</button>
+                {props.state.value
+                    ? <button
+                        onClick={() => dispatch(buttonItemAC(props.state.id, false))}
+                    >Одна відповідь</button>
+                    : <button
+                        onClick={() => dispatch(buttonItemAC(props.state.id, true))}
+                    >Декілька відповідей</button>
                 }
             </div>
-            <div className={styles.flex}>
-                <div className={styles.item_text}>
-                    {fetch
-                        ? <input type="checkbox" name="r1" id="" />
-                        : <input type="radio" name="r1" id="" />
-                    }
-                    <input type="text" name=""
-                        placeholder='Підпункт'
-                    />
-                </div>
-                <div className={styles.btn}>
-                    <button className={styles.create}>+</button>
-                    <button className={styles.delete}>-</button>
-                </div>
-            </div>
+            {
+                questions_items.map((item, index) =>
+                    <TestItem value={props.state.value} state={item} key={index}/>
+                )
+            }
+
         </section>
     )
 }
