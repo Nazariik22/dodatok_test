@@ -10,30 +10,15 @@ const Register = (props) => {
     const [tel, setTel] = useState('');
     const [email, setEmail] = useState('');
     const dispach = useDispatch();
-    const handlLC = (e) => {
-        setLogin(e.target.value)
-    }
-    const handlPC = (e) => {
-        setPassword(e.target.value)
-    }
-    const handlSC = (e) => {
-        setSernameName(e.target.value)
-    }
-    const handlTC = (e) => {
-        setTel(e.target.value)
-    }
-    const handlEC = (e) => {
-        setEmail(e.target.value)
-    }
-    const addUser =()=>{
+    const addUser = () => {
         dispach(addUserAC({
-            login:login,
-            password:password,
-            sernameName:sernameName,
-            tel:tel,
-            email:email
+            login: login,
+            password: password,
+            sernameName: sernameName,
+            tel: tel,
+            email: email
         }))
-        
+
     }
     return (
         <div className={styles.container}>
@@ -43,21 +28,21 @@ const Register = (props) => {
                     <p>Введіть логін:*</p>
                     <input type="text"
                         value={login}
-                        onChange={handlLC}
+                        onChange={(e) => { setLogin(e.target.value) }}
                     />
                 </section>
                 <section>
                     <p>Введіть пароль:*</p>
                     <input type="password"
                         value={password}
-                        onChange={handlPC}
+                        onChange={(e) => { setPassword(e.target.value) }}
                     />
                 </section>
                 <section>
                     <p>Прізвище та ім’я:*</p>
                     <input type="text"
                         value={sernameName}
-                        onChange={handlSC} />
+                        onChange={(e) => { setSernameName(e.target.value) }} />
                 </section>
                 <section>
                     <p>Номер телефону:*</p>
@@ -70,7 +55,7 @@ const Register = (props) => {
                         </div>
                         <input type="tel" placeholder="000 000 000"
                             value={tel}
-                            onChange={handlTC}
+                            onChange={(e) => { setTel(e.target.value) }}
                         />
                     </div>
                 </section>
@@ -78,13 +63,16 @@ const Register = (props) => {
                     <p>Електронна пошта:*</p>
                     <input type="email" placeholder="example@mail.com"
                         value={email}
-                        onChange={handlEC} />
+                        onChange={(e) => { setEmail(e.target.value) }} />
                 </section>
                 <section className={styles.konf}>
                     <input type="checkbox" />
                     <p>Я приймаю умови політики конфіденційності. <span>Докладніше.</span></p>
                 </section>
-                <NavLink to='/auto' className={styles.button} onClick={addUser}>Зареєструватися</NavLink>
+                <NavLink to='/auto'
+                    className={styles.button}
+                    onClick={addUser}
+                >Зареєструватися</NavLink>
             </form>
         </div>
 

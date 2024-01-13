@@ -1,0 +1,49 @@
+.section{
+    gap: 15px;
+    margin: 30px 0;
+    position: relative;
+    padding-bottom: 50px;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+button{
+    color: white;
+}
+.title button{
+    background: #72769B;
+    padding: 10px 5px;
+    border-radius: 5px;
+}
+.title  input{
+    width: 90%;
+    font-size: 20px;
+    padding: 10px;
+}
+.blok_button{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    gap: 5px;
+}
+.blok_button button{
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 25px;
+    
+}
+.btn{
+    transition:all .2s linear;
+    background: #6e6e6ead;
+}
+.btn:active{
+    background: #6e6e6e6b;
+}
+.create{
+    background: #EFBD50;
+}

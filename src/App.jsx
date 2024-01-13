@@ -6,6 +6,7 @@ import { AutorizathionContainer } from './Components/Autorizathion/Autorizathion
 import { GolovnaContainer } from './Components/Golovna/GolovnaContainer';
 import { ProfileContainer } from './Components/Profile/ProfileContainer';
 import { Register } from './Components/Register/Register';
+import { Create } from './Components/Create/Create';
 
 const App = () => {
     return (
@@ -20,6 +21,8 @@ const App = () => {
                     element={<Register />} />
                 <Route path='/info'
                     element={<ProfileContainer />} />
+                <Route path='/create'
+                    element={<Create />} />
             </Routes>
             <Footer/>
         </>
