@@ -1,37 +1,43 @@
-.flex{
+.flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 10px;
 }
-.item_text{
+
+.item_text {
     display: flex;
     gap: 10px;
-    width: 90%; 
+    width: 90%;
 }
-.item_text input{
+
+.item_text input {
     font-size: 16px;
     padding: 10px;
 }
-.item_text input[type='text']{
+
+.item_text input[type='text'] {
     width: 100%;
-    border:1px solid #4444444d;
+    border: 1px solid #4444444d;
 }
+
 .item_text input[type='checkbox'],
-.item_text input[type='radio']{
+.item_text input[type='radio'] {
     width: 25px;
 }
-.btn{
+
+.btn {
     display: flex;
     gap: 5px;
 }
-.btn button{
+
+.btn button {
     width: 40px;
     height: 40px;
     border-radius: 5px;
     font-size: 20px;
 }
 
-.delete{
+.delete {
     background: rgba(247, 73, 30, 0.582);
 }

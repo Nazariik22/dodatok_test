@@ -3,7 +3,7 @@ const BUTTONVALUE = 'BUTTONVALUE'
 const DESTROYTEST = "DESTROYTEST"
 const TEXTNEWVALUE = 'TEXTNEWVALUE'
 const CREATEITEMTEST = 'CREATEITEMTEST'
-const TEXTNEWITEMVALUE='TEXTNEWITEMVALUE'
+const TEXTNEWITEMVALUE = 'TEXTNEWITEMVALUE'
 const initialState = {
     id: 1,
     title: "",
@@ -82,14 +82,14 @@ const createReducer = (state = initialState, action) => {
                         return {
                             ...item,
                             questions_items: item.questions_items.map((question) => {
-                                    if(question.id_item===action.id_item){
-                                        return {
-                                            ...question,
-                                            text_question:action.data,
-                                        }
-                                    }else{
-                                        return question
+                                if (question.id_item === action.id_item) {
+                                    return {
+                                        ...question,
+                                        text_question: action.data,
                                     }
+                                } else {
+                                    return question
+                                }
                             })
                         }
                     } else {
@@ -136,10 +136,10 @@ const textNewValueAC = (id, data) => ({
     id: id,
     data: data,
 })
-const textNewItemValueAC = (id,id_item, data) => ({
+const textNewItemValueAC = (id, id_item, data) => ({
     type: TEXTNEWITEMVALUE,
     id: id,
-    id_item:id_item,
+    id_item: id_item,
     data: data,
 })
 const buttonItemAC = (id, data) => ({
@@ -150,6 +150,6 @@ const buttonItemAC = (id, data) => ({
 export {
     createReducer,
     createItemAC, createItemTestAC,
-    buttonItemAC, textNewValueAC,textNewItemValueAC,
+    buttonItemAC, textNewValueAC, textNewItemValueAC,
     destroyItemAC
 }

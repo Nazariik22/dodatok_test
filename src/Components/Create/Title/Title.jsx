@@ -1,6 +1,6 @@
 import styles from './Title.module.css';
 const Title = (props) => {
-    
+
     return (
         <section className={styles.section}>
             <input type="text"

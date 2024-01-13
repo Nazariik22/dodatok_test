@@ -12,8 +12,6 @@ const TestItem = (props) => {
                     : 'radio'}
                     name={props.id} id=""
                 />
-
-
                 <input type="text" name=""
                     placeholder='Підпункт'
                     value={props.state.text_question}
