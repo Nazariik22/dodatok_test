@@ -52,6 +52,7 @@ const personReducser = (state = initialState, action) => {
                     }
                 })
             }
+
         case LOGIN:
             debugger
             return {
@@ -72,6 +73,7 @@ const personReducser = (state = initialState, action) => {
                     about: "",
                 },]
             }
+
         default:
             return state;
     }
@@ -84,6 +86,7 @@ const adDUserAC = (data) => ({
     type: ADDUSER,
     data: data,
 })
+
 const addTestAC = (id, data) => ({
     type: ADDTEST,
     id: id,
