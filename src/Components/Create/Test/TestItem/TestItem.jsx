@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux'
-import { checkedValueAC, textNewItemValueAC } from '../../../../redux/create-reduser';
+import { checkedValueAC, destroyTestItemAC, textNewItemValueAC } from '../../../../redux/create-reduser';
 import styles from './TestItem.module.css'
 const TestItem = (props) => {
     const dispatch = useDispatch();
@@ -29,7 +29,12 @@ const TestItem = (props) => {
                 />
             </div>
             <div className={styles.btn}>
-                <button className={styles.delete}>-</button>
+                <button className={styles.delete}
+                    onClick={() => dispatch(destroyTestItemAC(
+                        props.id,
+                        props.state.id_item
+                    ))}
+                >-</button>
             </div>
         </div>
     )

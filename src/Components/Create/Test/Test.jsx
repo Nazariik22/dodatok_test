@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import styles from './Test.module.css';
-import { buttonItemAC, createItemTestAC, destroyItemAC } from '../../../redux/create-reduser';
+import { buttonItemAC, createItemTestAC, destroyItemAC, textNewValueAC } from '../../../redux/create-reduser';
 import { TestItem } from './TestItem/TestItem';
 const Test = (props) => {
     const questions_items = props.state.questions_items;
@@ -10,7 +10,12 @@ const Test = (props) => {
         <section className={styles.section}>
             <div className={`${styles.flex} ${styles.title}`}>
                 <input type="text"
-                    placeholder='Ввведіть запитання' />
+                    placeholder='Введіть запитання'
+                    value={props.state.text}
+                    onChange={(e) => dispatch(textNewValueAC(
+                        props.state.id,
+                        e.target.value
+                    ))} />
                 {props.state.value
                     ? <button
                         onClick={() => dispatch(buttonItemAC(props.state.id, false))}
