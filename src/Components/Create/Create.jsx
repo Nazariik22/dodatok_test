@@ -4,10 +4,8 @@ import { Title } from './Title/Title';
 import { Test } from './Test/Test';
 import { useState } from 'react';
 import { createItemAC } from '../../redux/create-reduser';
-const Create = (props) => {
-    
+const Create = (props) => { 
     const testItemCreate = useSelector(state => state.create);
-    console.log(testItemCreate)
     const [title, setTitle] = useState('');
     const [title_text, setTitle_text] = useState('');
     const dispatch = useDispatch();

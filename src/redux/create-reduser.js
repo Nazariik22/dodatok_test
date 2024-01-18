@@ -4,6 +4,7 @@ const DESTROYTEST = "DESTROYTEST"
 const TEXTNEWVALUE = 'TEXTNEWVALUE'
 const CREATEITEMTEST = 'CREATEITEMTEST'
 const TEXTNEWITEMVALUE = 'TEXTNEWITEMVALUE'
+const CHEKEDVALUE = 'CHEKEDVALUE'
 const initialState = {
     id: 1,
     title: "",
@@ -97,6 +98,49 @@ const createReducer = (state = initialState, action) => {
                     }
                 })
             }
+
+        case CHEKEDVALUE:
+            return {
+                ...state,
+                questions: state.questions.map((item, index) => {
+                    if (item.id === action.id
+                        && item.value) {
+                        return {
+                            ...item,
+                            questions_items: item.questions_items.map((question) => {
+                                if (question.id_item === action.id_item) {
+                                    return {
+                                        ...question,
+                                        value: action.data,
+                                    }
+                                } else {
+                                    return question
+                                }
+                            })
+                        }
+                    } else if (item.id === action.id) {
+                        return {
+                            ...item,
+                            questions_items: item.questions_items.map((question) => {
+                                if (question.id_item === action.id_item) {
+                                    return {
+                                        ...question,
+                                        value: true,
+                                    }
+                                } else {
+                                    return {
+                                        ...question,
+                                        value: false,
+                                    }
+                                }
+                            })
+                        }
+                    }
+                    else {
+                        return item;
+                    }
+                })
+            }
         case CREATEITEMTEST:
             const dataItemId = new Date().setUTCSeconds(20);
             return {
@@ -142,6 +186,12 @@ const textNewItemValueAC = (id, id_item, data) => ({
     id_item: id_item,
     data: data,
 })
+const checkedValueAC = (id, id_item, data) => ({
+    type: CHEKEDVALUE,
+    id: id,
+    id_item: id_item,
+    data: data,
+})
 const buttonItemAC = (id, data) => ({
     type: BUTTONVALUE,
     id: id,
@@ -150,6 +200,6 @@ const buttonItemAC = (id, data) => ({
 export {
     createReducer,
     createItemAC, createItemTestAC,
-    buttonItemAC, textNewValueAC, textNewItemValueAC,
+    buttonItemAC, textNewValueAC, textNewItemValueAC, checkedValueAC,
     destroyItemAC
 }

@@ -1,16 +1,22 @@
 import { useDispatch } from 'react-redux'
-import { textNewItemValueAC } from '../../../../redux/create-reduser';
+import { checkedValueAC, textNewItemValueAC } from '../../../../redux/create-reduser';
 import styles from './TestItem.module.css'
 const TestItem = (props) => {
     const dispatch = useDispatch();
-    debugger
+    //debugger
     return (
         <div className={styles.flex}>
             <div className={styles.item_text}>
                 <input type={props.value
                     ? 'checkbox'
                     : 'radio'}
-                    name={props.id} id=""
+                    name={props.id}
+                    checked={props.state.value && "checked"}
+                    onClick={() => dispatch(checkedValueAC(
+                        props.id,
+                        props.state.id_item,
+                        props.state.value ? false : true
+                    ))}
                 />
                 <input type="text" name=""
                     placeholder='Підпункт'
