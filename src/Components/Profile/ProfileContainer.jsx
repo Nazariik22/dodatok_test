@@ -3,7 +3,7 @@ import { Profile } from "./Profile";
 
 const mapStateToProps= (state)=>{
     return{
-        idUser:state.user.userId,
+        idUser:state.personData.userId,
         chekValue:state.personData.chekValue,
     }
 }
