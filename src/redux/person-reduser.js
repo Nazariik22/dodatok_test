@@ -54,7 +54,6 @@ const personReducser = (state = initialState, action) => {
             }
 
         case LOGIN:
-            debugger
             return {
                 ...state,
                 auto: action.auto,
