@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import styles from './Register.module.css'
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addUserAC } from '../../redux/user-reduser';
+import { adDUserAC } from '../../redux/person-reduser';
 const Register = (props) => {
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
@@ -11,14 +11,15 @@ const Register = (props) => {
     const [email, setEmail] = useState('');
     const dispach = useDispatch();
     const addUser = () => {
-        dispach(addUserAC({
-            login: login,
-            password: password,
-            sernameName: sernameName,
-            tel: tel,
-            email: email
-        }))
-
+        if (login && password && sernameName && tel && email) {
+            dispach(adDUserAC({
+                login: login,
+                password: password,
+                sernameName: sernameName,
+                tel: tel,
+                email: email
+            }))
+        }
     }
     return (
         <div className={styles.container}>

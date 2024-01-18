@@ -1,16 +1,17 @@
 import { connect } from "react-redux";
 import { Autorizathion } from "./Autorizathion";
-import { loginAC } from "../../redux/user-reduser";
+import { loginAC } from "../../redux/person-reduser";
+
 
 const mapStateToProps = (state) => {
     return {
-        user: state.user.person,
-        auto: state.user.auto
+        user: state.personData.person,
+        auto: state.personData.auto
     }
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        login: (auto,id) => dispatch(loginAC(auto,id))
+       
     }
 }
 

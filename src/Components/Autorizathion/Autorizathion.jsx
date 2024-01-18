@@ -1,17 +1,21 @@
 import { useState } from 'react';
 import styles from './Autorizathion.module.css'
 import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { loginAC } from '../../redux/person-reduser';
 const Autorizathion = (props) => {
+    const dispatch = useDispatch()
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const loginAuto = () => {
-        props.user.forEach(element => {
+        props.user.map((element, index) => {
             element.userInfo.login === login
                 && element.userInfo.password === password
-                && props.login(true, element.id)
+                && dispatch(loginAC(true,index))
 
         });
     }
+
     return (
         <div className={styles.container}>
             <form className={styles.login}>
@@ -21,13 +25,13 @@ const Autorizathion = (props) => {
                 <section>
                     <p >Логін/Електронна адреса:</p>
                     <input type="text" placeholder="Логін..."
-                        value={login} onChange={(e)=>setLogin(e.target.value)}
+                        value={login} onChange={(e) => setLogin(e.target.value)}
                     />
                 </section>
                 <section>
                     <p>Пароль:</p>
                     <input type="password" placeholder="Пароль..."
-                        value={password} onChange={(e)=>setPassword(e.target.value)} />
+                        value={password} onChange={(e) => setPassword(e.target.value)} />
                 </section>
                 <NavLink to={props.auto && '/'}
                     className={styles.button}

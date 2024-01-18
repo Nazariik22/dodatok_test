@@ -1,24 +1,31 @@
 const UPPDATA = 'UPPDATA'
+const ADDTEST = 'ADDTEST'
+const ADDUSER = 'ADDUSER'
+const LOGIN = "LOGIN"
 const initialState = {
     person: [
         {
             id: 1,
             img: null,
+            userInfo: {
+                login: "nazarii",
+                password: "123",
+                sernameName: "Nazarii Krutiak",
+                tel: "+380954670150",
+                email: "nazariik20@gmail.com",
+            },
             test: [
-                { id: "test1", title: "Test1", countQuestion: 10, play: 8 },
-                { id: "test2", title: "Test2", countQuestion: 5, play: 0 },
-                { id: "test3", title: "Test3", countQuestion: 15, play: 7 },
+
             ],
             about: "Вчитель Бродівської гімназії",
         },
-        {
-            id: 2, test: [
 
-            ]
-        },
+
+
     ],
     chekValue: false,
-
+    auto: false,
+    userId: "",
 
 }
 const personReducser = (state = initialState, action) => {
@@ -28,6 +35,43 @@ const personReducser = (state = initialState, action) => {
                 ...state,
                 chekValue: action.data,
             }
+        case ADDTEST:
+            return {
+                ...state,
+                person: state.person.map(item => {
+                    if (item.id === action.id) {
+                        return {
+                            ...item,
+                            test: [
+                                ...item.test,
+                                action.data
+                            ]
+                        }
+                    } else {
+                        return item
+                    }
+                })
+            }
+        case LOGIN:
+            debugger
+            return {
+                ...state,
+                auto: action.auto,
+                userId: action.id,
+            }
+        case ADDUSER:
+            const dataId = new Date().setUTCSeconds(20);
+            return {
+                ...state,
+                person: [...state.person,
+                {
+                    id: dataId,
+                    img: null,
+                    userInfo: action.data,
+                    test: [],
+                    about: "",
+                },]
+            }
         default:
             return state;
     }
@@ -36,4 +80,23 @@ const uppDataAC = (data) => ({
     type: UPPDATA,
     data: data,
 })
-export { personReducser,uppDataAC }
+const adDUserAC = (data) => ({
+    type: ADDUSER,
+    data: data,
+})
+const addTestAC = (id, data) => ({
+    type: ADDTEST,
+    id: id,
+    data: data,
+})
+const loginAC = (auto, id) => (
+    {
+        type: LOGIN,
+        auto: auto,
+        id: id
+    }
+)
+export {
+    personReducser,
+    uppDataAC, addTestAC, adDUserAC, loginAC
+}

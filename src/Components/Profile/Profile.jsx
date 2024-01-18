@@ -5,17 +5,15 @@ import logo from './../../img/person-logo.png'
 import styles from './Profile.module.css'
 const Profile = (props) => {
     const dispatch = useDispatch();
-    const state = useSelector(state => state.personData.person[props.idUser - 1])
-    const user = useSelector(state => state.user.person[props.idUser - 1])
-    const {sernameName } = user.userInfo;
-    const [login, setLogin] = useState(user.userInfo.login);
-    const [password, setPassword] = useState(user.userInfo.password);
-    const [tel, setTel] = useState(user.userInfo.tel);
-    const [email, setEmail] = useState(user.userInfo.email);
+    const state = useSelector(state => state.personData.person[props.idUser])
+    const [login, setLogin] = useState(state.userInfo.login);
+    const [password, setPassword] = useState(state.userInfo.password);
+    const [tel, setTel] = useState(state.userInfo.tel);
+    const [email, setEmail] = useState(state.userInfo.email);
     return (
         <main className={styles.main}>
             <img src={state.img ? state.img : logo} alt="" />
-            <div className={styles.title}>{sernameName}</div>
+            <div className={styles.title}>{state.userInfo.sernameName}</div>
             <div className={styles.about}>{state.about}</div>
             <section className={styles.section}>
                 <div className={styles.flex}>
