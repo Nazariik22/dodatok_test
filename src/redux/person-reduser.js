@@ -2,6 +2,7 @@ const UPPDATA = 'UPPDATA'
 const ADDTEST = 'ADDTEST'
 const ADDUSER = 'ADDUSER'
 const LOGIN = "LOGIN"
+const UPPDATA_USER_INFO = 'UPPDATA_USER_INFO'
 const initialState = {
     person: [
         {
@@ -24,8 +25,8 @@ const initialState = {
 
     ],
     chekValue: false,
-    auto: false,
-    userId: "",
+    auto: true,
+    userId: 0,
 
 }
 const personReducser = (state = initialState, action) => {
@@ -34,6 +35,23 @@ const personReducser = (state = initialState, action) => {
             return {
                 ...state,
                 chekValue: action.data,
+            }
+        case UPPDATA_USER_INFO:
+            return {
+                ...state,
+                person: state.person.map(item => {
+                    if (item.id === action.id){
+                            return{
+                                ...item,
+                                userInfo:{
+                                    ...item.userInfo,
+                                    ...action.data
+                                }
+                            }
+                    }else{
+                        return item;
+                    }
+                })
             }
         case ADDTEST:
             return {
@@ -91,6 +109,11 @@ const addTestAC = (id, data) => ({
     id: id,
     data: data,
 })
+const uppdataUserInfoAC = (id, data) => ({
+    type: UPPDATA_USER_INFO,
+    id: id,
+    data: data,
+})
 const loginAC = (auto, id) => (
     {
         type: LOGIN,
@@ -100,5 +123,6 @@ const loginAC = (auto, id) => (
 )
 export {
     personReducser,
-    uppDataAC, addTestAC, adDUserAC, loginAC
+    uppDataAC, uppdataUserInfoAC,
+    addTestAC, adDUserAC, loginAC
 }

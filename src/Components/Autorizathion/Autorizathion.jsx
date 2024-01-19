@@ -4,6 +4,8 @@ import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { loginAC } from '../../redux/person-reduser';
 const Autorizathion = (props) => {
+    console.log(props)
+    debugger
     const dispatch = useDispatch()
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
@@ -11,7 +13,7 @@ const Autorizathion = (props) => {
         props.user.map((element, index) => {
             element.userInfo.login === login
                 && element.userInfo.password === password
-                && dispatch(loginAC(true,index))
+                && dispatch(loginAC(true, index))
 
         });
     }
@@ -33,7 +35,7 @@ const Autorizathion = (props) => {
                     <input type="password" placeholder="Пароль..."
                         value={password} onChange={(e) => setPassword(e.target.value)} />
                 </section>
-                <NavLink to={props.auto && '/'}
+                <NavLink to='/'
                     className={styles.button}
                     onClick={loginAuto}
                 >Увійти</NavLink>

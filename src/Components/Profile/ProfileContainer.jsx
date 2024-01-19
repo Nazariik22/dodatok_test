@@ -4,6 +4,7 @@ import { Profile } from "./Profile";
 const mapStateToProps= (state)=>{
     return{
         idUser:state.personData.userId,
+        auto:state.personData.auto,
         chekValue:state.personData.chekValue,
     }
 }

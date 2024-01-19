@@ -4,6 +4,7 @@ import { Golovna } from "./Golovna";
 const  mapStateToProps=(state)=>{
     return{
         pages:state.golovna.pageList,
+        auto:state.personData.auto,
     }
 }
 const  mapDispatchToProps=(dispatch)=>{
