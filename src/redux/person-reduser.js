@@ -9,14 +9,93 @@ const initialState = {
             id: 1,
             img: null,
             userInfo: {
-                login: "nazarii",
-                password: "123",
+                login: "1",
+                password: "1",
                 sernameName: "Nazarii Krutiak",
                 tel: "+380954670150",
                 email: "nazariik20@gmail.com",
             },
             test: [
-
+                {
+                    id: 1,
+                    title: "Test1",
+                    title_text: "Test_title_1",
+                    questions: [
+                        {
+                            id: 0,
+                            text: "t1",
+                            value: false,
+                            questions_items: [
+                                {
+                                    id_item: 0,
+                                    value: false,
+                                    text_question: "1"
+                                },
+                                {
+                                    id_item: 1705919360088,
+                                    value: true,
+                                    text_question: "2"
+                                },
+                                {
+                                    id_item: 1705919360920,
+                                    value: false,
+                                    text_question: "3"
+                                }
+                            ]
+                        },
+                        {
+                            id: 1705919360678,
+                            text: "t2",
+                            value: true,
+                            questions_items: [
+                                {
+                                    id_item: 0,
+                                    value: true,
+                                    text_question: "1"
+                                },
+                                {
+                                    id_item: 1705919360367,
+                                    value: true,
+                                    text_question: "2"
+                                },
+                                {
+                                    id_item: 1705919360434,
+                                    value: false,
+                                    text_question: "3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    id: 1705926740705,
+                        title: "Test2",
+                            title_text: "Title_2",
+                                questions: [
+                                    {
+                                        id: 0,
+                                        text: "ww",
+                                        value: false,
+                                        questions_items: [
+                                            {
+                                                id_item: 0,
+                                                value: false,
+                                                text_question: "www"
+                                            },
+                                            {
+                                                id_item: 1705926740032,
+                                                value: false,
+                                                text_question: "aaa"
+                                            },
+                                            {
+                                                id_item: 1705926740789,
+                                                value: false,
+                                                text_question: "zzz"
+                                            }
+                                        ]
+                                    }
+                                ]
+                }
             ],
             about: "Вчитель Бродівської гімназії",
         },
@@ -26,7 +105,7 @@ const initialState = {
     ],
     chekValue: false,
     auto: true,
-    userId: 0,
+    userId: 1,
 
 }
 const personReducser = (state = initialState, action) => {
@@ -40,15 +119,15 @@ const personReducser = (state = initialState, action) => {
             return {
                 ...state,
                 person: state.person.map(item => {
-                    if (item.id === action.id){
-                            return{
-                                ...item,
-                                userInfo:{
-                                    ...item.userInfo,
-                                    ...action.data
-                                }
+                    if (item.id === action.id) {
+                        return {
+                            ...item,
+                            userInfo: {
+                                ...item.userInfo,
+                                ...action.data
                             }
-                    }else{
+                        }
+                    } else {
                         return item;
                     }
                 })
@@ -56,6 +135,7 @@ const personReducser = (state = initialState, action) => {
         case ADDTEST:
             console.log(state)
             debugger
+            const idTest = new Date().setUTCSeconds(20);
             return {
                 ...state,
                 person: state.person.map(item => {
@@ -63,8 +143,11 @@ const personReducser = (state = initialState, action) => {
                         return {
                             ...item,
                             test: [
-                                ...item.test,
-                                action.data
+                                ...item.test, {
+                                    ...action.data,
+                                    id: idTest
+                                }
+
                             ]
                         }
                     } else {

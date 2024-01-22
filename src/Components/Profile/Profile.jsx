@@ -5,18 +5,14 @@ import { uppDataAC, uppdataUserInfoAC } from "../../redux/person-reduser";
 import logo from './../../img/person-logo.png'
 import styles from './Profile.module.css'
 const Profile = (props) => {
-    debugger
     const dispatch = useDispatch();
     const state = useSelector(state => state?.personData?.person.filter(item =>
-        item.id === props.idUser && item
-    ))[0]
+        item.id === props.idUser && item))[0];
     const [login, setLogin] = useState(state?.userInfo?.login);
     const [password, setPassword] = useState(state?.userInfo?.password);
     const [tel, setTel] = useState(state?.userInfo?.tel);
     const [email, setEmail] = useState(state?.userInfo?.email);
-    console.clear();
     console.log(state)
-    debugger
     if (!props.auto) return <Navigate to="/auto" replace={true} />
     return (
         <main className={styles.main}>
