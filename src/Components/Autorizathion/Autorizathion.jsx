@@ -4,18 +4,16 @@ import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { loginAC } from '../../redux/person-reduser';
 const Autorizathion = (props) => {
-    console.log(props)
-    debugger
+
     const dispatch = useDispatch()
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const loginAuto = () => {
-        props.user.map((element, index) => {
+        props.user.map(element => 
             element.userInfo.login === login
                 && element.userInfo.password === password
-                && dispatch(loginAC(true, index))
-
-        });
+                && dispatch(loginAC(true, element.id))
+        );
     }
 
     return (

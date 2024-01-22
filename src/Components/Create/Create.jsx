@@ -8,7 +8,7 @@ import { addTestAC } from '../../redux/person-reduser';
 const Create = (props) => {
     const testItemCreate = useSelector(state => state.create);
     const [title, setTitle] = useState('');
-    const userId = useSelector(state => state.user.userId);
+    const userId = useSelector(state => state.personData.userId);
     const [title_text, setTitle_text] = useState('');
     const dispatch = useDispatch();
     return (

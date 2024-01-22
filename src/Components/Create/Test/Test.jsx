@@ -5,7 +5,6 @@ import { TestItem } from './TestItem/TestItem';
 const Test = (props) => {
     const questions_items = props.state.questions_items;
     const dispatch = useDispatch();
-    console.log(props)
     return (
         <section className={styles.section}>
             <div className={`${styles.flex} ${styles.title}`}>

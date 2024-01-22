@@ -54,6 +54,8 @@ const personReducser = (state = initialState, action) => {
                 })
             }
         case ADDTEST:
+            console.log(state)
+            debugger
             return {
                 ...state,
                 person: state.person.map(item => {
@@ -72,6 +74,7 @@ const personReducser = (state = initialState, action) => {
             }
 
         case LOGIN:
+            debugger
             return {
                 ...state,
                 auto: action.auto,
