@@ -3,7 +3,6 @@ import styles from './TestItem.module.css'
 import img from './../../../../img/icon/Creative-Tail-Animal-bat.svg'
 
 const TestItem = (props) => {
-   console.log(props)
     return (
         <div className={styles.container}>
             <div className={styles.content}>

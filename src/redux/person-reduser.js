@@ -133,8 +133,6 @@ const personReducser = (state = initialState, action) => {
                 })
             }
         case ADDTEST:
-            console.log(state)
-            debugger
             const idTest = new Date().setUTCSeconds(20);
             return {
                 ...state,
@@ -157,7 +155,6 @@ const personReducser = (state = initialState, action) => {
             }
 
         case LOGIN:
-            debugger
             return {
                 ...state,
                 auto: action.auto,
