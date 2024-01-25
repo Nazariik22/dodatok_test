@@ -6,7 +6,7 @@ const TestItem = (props) => {
     return (
         <div className={styles.container}>
             <div className={styles.content}>
-                <NavLink to={`/game/el:${props.state.id}_p:${props.userId}`}><span>&#9658;</span></NavLink>
+                <NavLink to={`/game/1/el:${props.state.id}_p:${props.userId}`}><span>&#9658;</span></NavLink>
                 <img src={img} alt="" />
                 <div className="title">{props.state.title}</div>
             </div>

@@ -1,0 +1,10 @@
+.label {
+    display: block;
+    font-size: 26px;
+    width: 100%;
+    
+}
+.label  input{
+    margin-right: 30px;
+    font-size: 30px;
+}

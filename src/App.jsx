@@ -7,6 +7,7 @@ import { GolovnaContainer } from './Components/Golovna/GolovnaContainer';
 import { ProfileContainer } from './Components/Profile/ProfileContainer';
 import { Register } from './Components/Register/Register';
 import { Create } from './Components/Create/Create';
+import { Game } from './Components/Game/Game';
 
 const App = () => {
     return (
@@ -23,6 +24,8 @@ const App = () => {
                     element={<ProfileContainer />} />
                 <Route path='/create'
                     element={<Create />} />
+                <Route path='/game/:id/:testId'
+                    element={<Game />} />
             </Routes>
             <Footer/>
         </>

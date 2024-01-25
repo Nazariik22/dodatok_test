@@ -1,0 +1,21 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    width: 1280px;
+    margin: auto;
+    gap:40px;
+    height: 100vh;
+    color: #000;
+    overflow: hidden;
+}
+.main section{
+    gap: 30px;
+}
+.main a{
+    align-self: right;
+    padding: 10px 30px;
+    letter-spacing: 2px;
+    background: rgb(92, 231, 92);
+    font-size: 25px;
+}
