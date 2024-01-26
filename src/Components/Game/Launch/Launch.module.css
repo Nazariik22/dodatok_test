@@ -12,8 +12,21 @@
 .main section{
     gap: 30px;
 }
+.main h2{
+    align-self: flex-start;
+    position: relative;
+    
+}
+.main h2::before{
+    content: '';
+    position: absolute;
+    top: 110%;
+    width: 100%;
+    height: 4px;
+    background: #EFBD50;
+}
 .main a{
-    align-self: right;
+    align-self: flex-end;
     padding: 10px 30px;
     letter-spacing: 2px;
     background: rgb(92, 231, 92);

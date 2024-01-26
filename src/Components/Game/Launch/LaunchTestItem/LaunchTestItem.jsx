@@ -2,6 +2,7 @@ import styles from './LaunchTestItem.module.css'
 
 
 const LaunchTestItem = (props) => {
+    debugger
     return (
         <label
             className={styles.label}
@@ -10,6 +11,7 @@ const LaunchTestItem = (props) => {
                 props.value
                     ? 'checkbox'
                     : 'radio'}
+                    name={props.id}
             />
             {props.state.text_question}
         </label>

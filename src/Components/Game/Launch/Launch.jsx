@@ -2,19 +2,21 @@ import { LaunchTestItem } from "./LaunchTestItem/LaunchTestItem"
 import styles from './Launch.module.css'
 import { NavLink } from "react-router-dom"
 const Launch = (props) => {
+    const question = props.state.questions[props.id - 2];
+    debugger
     return (
         <main className={styles.main}>
-            <h2>props.state.text</h2>
-            {/*{props.questions_items.map(item=>{
-                <LaunchTestItem/>
-            })}*/}
+            <h2>{question.text}</h2>
             <section>
-                <LaunchTestItem
-                    value={props.state.value}
-                    state={props.state}
-                />
+                {question.questions_items.map(item =>
+                    <LaunchTestItem
+                        state={item}
+                        value={question.value}
+                        id={question.id}
+                    />
+                )}
             </section>
-            <NavLink to={`/game/`}>Перейти</NavLink>
+            <NavLink to={`/game/${props.id + 1}/${props.urlInfo.idTest}/${props.urlInfo.personId}`}>Перейти</NavLink>
         </main>
     )
 }

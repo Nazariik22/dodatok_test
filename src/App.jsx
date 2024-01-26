@@ -24,7 +24,7 @@ const App = () => {
                     element={<ProfileContainer />} />
                 <Route path='/create'
                     element={<Create />} />
-                <Route path='/game/:id/:testId'
+                <Route path='/game/:id/:testId/:person'
                     element={<Game />} />
             </Routes>
             <Footer/>
