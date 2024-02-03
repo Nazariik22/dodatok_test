@@ -5,7 +5,7 @@ import { Test } from './Test/Test';
 import { useState } from 'react';
 import { createItemAC, titleElementAC, uppdateAC } from '../../redux/create-reduser';
 import { addTestAC } from '../../redux/person-reduser';
-const Create = (props) => {
+const Create = () => {
     const testItemCreate = useSelector(state => state.create);
     const [title, setTitle] = useState('');
     const userId = useSelector(state => state.personData.userId);

@@ -8,6 +8,7 @@ const ContainerTest = (props) => {
             <section className={styles.section}>
                 {props.state.test.map(item =>
                     <TestItem
+                    key={item.id}
                         state={item}
                         userId={props.userId} />)}
             </section>

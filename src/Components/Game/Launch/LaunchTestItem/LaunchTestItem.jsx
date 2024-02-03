@@ -1,8 +1,11 @@
+
+import { useDispatch } from 'react-redux'
 import styles from './LaunchTestItem.module.css'
+import { answerAC } from '../../../../redux/game-reducer'
 
 
 const LaunchTestItem = (props) => {
-    debugger
+    const dispatch = useDispatch()
     return (
         <label
             className={styles.label}
@@ -11,7 +14,13 @@ const LaunchTestItem = (props) => {
                 props.value
                     ? 'checkbox'
                     : 'radio'}
-                    name={props.id}
+                name={props.id}
+                checked={props.state.cheked && "checked"}
+                onClick={() => dispatch(answerAC(
+                    props.id,
+                    props.state.id_item,
+                    props.state.cheked ? false : true,
+                ))}
             />
             {props.state.text_question}
         </label>

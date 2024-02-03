@@ -1,0 +1,37 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    width: 1280px;
+    margin: auto;
+    gap:40px;
+    height: 100vh;
+    color: #000;
+    align-items: center;
+}
+.main img{
+    width: 200px;
+}
+.main h2{
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #2c2b2b;
+}
+.main p{
+    letter-spacing: 2px;
+}
+.main p b{
+    color: rgba(247, 73, 30, 0.982);
+}
+.main a{
+    background: #EFBD50;
+    color: white;
+    padding: 20px 30px;
+    border-radius: 5px;
+    box-shadow: 2px 5px rgba(0, 0, 0, 0.301);
+    transition:all .2s linear;
+}
+.main a:active{
+    scale: .9;
+}

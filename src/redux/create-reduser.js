@@ -7,12 +7,14 @@ const TEXTNEWITEMVALUE = 'TEXTNEWITEMVALUE'
 const CHEKEDVALUE = 'CHEKEDVALUE'
 const DESTROYTESTITEM = 'DESTROYTESTITEM'
 const TITLEELEMENTAC = 'TITLEELEMENTAC'
-const UPPDATE='UPPDATE'
+const UPPDATE = 'UPPDATE'
 
 const initialState = {
     id: 1,
     title: "",
     title_text: "",
+    game: [
+    ],
     questions: [
         {
             id: 0,
@@ -23,6 +25,7 @@ const initialState = {
                     id_item: 0,
                     value: false,
                     text_question: "",
+                    cheked: false,
                 },
             ],
 
@@ -45,6 +48,7 @@ const createReducer = (state = initialState, action) => {
                             id_item: 0,
                             value: false,
                             text_question: "",
+                            cheked: false,
                         },
                     ],
 
@@ -179,6 +183,7 @@ const createReducer = (state = initialState, action) => {
                                 id_item: dataItemId,
                                 value: false,
                                 text_question: "",
+                                cheked: false,
                             },]
                         }
                     } else {
@@ -196,7 +201,7 @@ const createItemAC = () => ({
     type: CREATETEST,
 })
 const uppdateAC = () => ({
-    type:  UPPDATE,
+    type: UPPDATE,
 
 })
 const createItemTestAC = (id) => ({
@@ -241,7 +246,7 @@ const destroyTestItemAC = (id, id_item) => ({
 })
 export {
     createReducer,
-    createItemAC, createItemTestAC, titleElementAC,uppdateAC,
+    createItemAC, createItemTestAC, titleElementAC, uppdateAC,
     buttonItemAC, textNewValueAC, textNewItemValueAC, checkedValueAC,
     destroyItemAC, destroyTestItemAC
 }
