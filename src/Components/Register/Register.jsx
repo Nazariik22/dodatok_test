@@ -4,12 +4,12 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { adDUserAC } from '../../redux/person-reduser';
 const Register = (props) => {
+    const dispach = useDispatch();
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const [sernameName, setSernameName] = useState('');
     const [tel, setTel] = useState('');
-    const [email, setEmail] = useState('');
-    const dispach = useDispatch();
+    const [email, setEmail] = useState('');  
     const addUser = () => {
         if (login && password && sernameName && tel && email) {
             dispach(adDUserAC({

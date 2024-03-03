@@ -5,7 +5,6 @@ import { Finish } from './Finish/Finish';
 import { useSelector } from 'react-redux';
 
 const Game = () => {
-    debugger
     const personName = useSelector(state => state.game.name);
     const idTest = Number(useParams().testId);
     const id = Number(useParams().id);
@@ -22,6 +21,7 @@ const Game = () => {
         idTest: idTest,
         url: url,
     }
+    
     function numberAdd(data) {
         let count = 1
         data.forEach(element => {

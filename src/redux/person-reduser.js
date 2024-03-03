@@ -4,6 +4,9 @@ const ADDUSER = 'ADDUSER'
 const LOGIN = "LOGIN"
 const UPPDATA_USER_INFO = 'UPPDATA_USER_INFO'
 const ADDRESALTGAME = 'ADDRESALTGAME'
+const DELETE_TEST_USER = 'DELETE_TEST_USER'
+const WINDOW = 'WINDOW'
+const CLOSEWINDOW = 'CLOSEWINDOW'
 const initialState = {
     person: [
         {
@@ -12,19 +15,76 @@ const initialState = {
             userInfo: {
                 login: "1",
                 password: "1",
-                sernameName: "Nazarii Krutiak",
-                tel: "+380954670150",
-                email: "nazariik20@gmail.com",
+                sernameName: "Софія Леміщак",
+                tel: "+380000000",
+                email: "sofia@gmail.com",
             },
             test: [
                 {
+              
                     id: 1,
                     title: "Test1",
                     title_text: "Test_title_1",
                     game: [
-                        { personName: "User1", number: 11 },
+                        { personName: "Софія Леміщак", number: 1 },
+                        { personName: "Олена Леміщак", number: 3 },
+                        { personName: "Ковалів Руслана", number: 2 },
+                        { personName: "Козіцький Роман", number: 4 },
+                        { personName: " Романюк Юрій", number: 4 },
+                        { personName: " Смага Олександр", number: 1 },
+                        { personName: "Чупель Олександр", number: 1 },
                     ],
                     questions: [
+                        {
+                            id: 0,
+                            text: "t1",
+                            value: false,
+                            questions_items: [
+                                {
+                                    id_item: 0,
+                                    value: false,
+                                    text_question: "1",
+                                    cheked: false,
+                                },
+                                {
+                                    id_item: 1705919360088,
+                                    value: true,
+                                    text_question: "2",
+                                    cheked: false,
+                                },
+                                {
+                                    id_item: 1705919360920,
+                                    value: false,
+                                    text_question: "3",
+                                    cheked: false,
+                                }
+                            ]
+                        },
+                        {
+                            id: 0,
+                            text: "t1",
+                            value: false,
+                            questions_items: [
+                                {
+                                    id_item: 0,
+                                    value: false,
+                                    text_question: "1",
+                                    cheked: false,
+                                },
+                                {
+                                    id_item: 1705919360088,
+                                    value: true,
+                                    text_question: "4",
+                                    cheked: false,
+                                },
+                                {
+                                    id_item: 1705919360920,
+                                    value: false,
+                                    text_question: "3",
+                                    cheked: false,
+                                }
+                            ]
+                        },
                         {
                             id: 0,
                             text: "t1",
@@ -113,19 +173,39 @@ const initialState = {
                     ]
                 }
             ],
-            about: "Вчитель Бродівської гімназії",
+            about: "Учениця Бродівської гімназії ім. І. Труша",
         },
 
 
 
     ],
     chekValue: false,
-    auto: true,
-    userId: 1,
+    auto: false,
+    userId: 0,
+    window: {
+        chaked: false,
+        id: 0
+    },
 
 }
 const personReducser = (state = initialState, action) => {
     switch (action.type) {
+        case WINDOW:
+            return {
+                ...state,
+                window: {
+                    chaked: true,
+                    id: action.id
+                },
+            }
+        case CLOSEWINDOW:
+            return {
+                ...state,
+                window: {
+                    chaked: false,
+                    id: 0,
+                },
+            }
         case UPPDATA:
             return {
                 ...state,
@@ -149,7 +229,6 @@ const personReducser = (state = initialState, action) => {
                 })
             }
         case ADDRESALTGAME:
-            debugger
             return {
                 ...state,
                 person: state.person.map(item => {
@@ -213,11 +292,32 @@ const personReducser = (state = initialState, action) => {
                     about: "",
                 },]
             }
+        case DELETE_TEST_USER:
+            return {
+                ...state,
+                person: state.person.map(item => {
+                    if (item.id === action.id) {
+                        return {
+                            ...item,
+                            test: item.test.filter(element => element.id !== action.test_id)
+                        }
 
+                    }
+                    return item
+                })
+            }
         default:
             return state;
     }
 }
+const windowAC = (id) => ({
+    type: WINDOW,
+    id: id
+})
+const closeWindowAC = () => ({
+    type:CLOSEWINDOW,
+   
+})
 const uppDataAC = (data) => ({
     type: UPPDATA,
     data: data,
@@ -248,8 +348,14 @@ const loginAC = (auto, id) => ({
     auto: auto,
     id: id
 })
+const deleteTestUserAC = (id, test_id) => ({
+    type: DELETE_TEST_USER,
+    id: id,
+    test_id: test_id,
+})
 export {
-    personReducser,
+    personReducser, windowAC,closeWindowAC,
     uppDataAC, uppdataUserInfoAC, addResaltGameAC,
+    deleteTestUserAC,
     addTestAC, adDUserAC, loginAC
 }

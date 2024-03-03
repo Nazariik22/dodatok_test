@@ -12,6 +12,8 @@ const Start = (props) => {
                 fgColor="#000"
                 size={200} />
             <section className={styles.section}>
+                <p>{props.test.title}</p>
+                <p>{props.test.title_text}</p>
                 <p>Посилання: {props.urlInfo.url}</p>
                 <div>Прізвище та ім'я</div>
                 <input type="text"

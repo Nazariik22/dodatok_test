@@ -13,7 +13,7 @@ const Header = () => {
             </div>
             <div className={styles.header_blok}>
                 <div className={styles.search}>
-                    <input type="text" />
+                    {/*<input type="text" />*/}
                     <div className="img"></div>
                 </div>
                 <NavLink to='/auto' >Увійти</NavLink>

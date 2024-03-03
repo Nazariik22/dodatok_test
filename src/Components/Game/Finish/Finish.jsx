@@ -5,7 +5,6 @@ import { useDispatch } from 'react-redux'
 import { uppDateGameAC } from '../../../redux/game-reducer'
 import { addResaltGameAC } from '../../../redux/person-reduser'
 const Finish = (props) => {
-    debugger
     const dispatch = useDispatch()
     return (
         <main className={styles.main}>
@@ -19,7 +18,6 @@ const Finish = (props) => {
             }></div></div>
             <NavLink to='/'
                 onClick={() => {
-                    debugger
                     dispatch(addResaltGameAC(
                         props.personId,
                         props.idTest,
@@ -28,7 +26,6 @@ const Finish = (props) => {
                             number: props.number
                         }
                     ))
-                    debugger
                     dispatch(uppDateGameAC())
                 }}>Завершити проходження</NavLink>
         </main>

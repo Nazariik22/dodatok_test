@@ -12,7 +12,6 @@ const Profile = (props) => {
     const [password, setPassword] = useState(state?.userInfo?.password);
     const [tel, setTel] = useState(state?.userInfo?.tel);
     const [email, setEmail] = useState(state?.userInfo?.email);
-    console.log(state)
     if (!props.auto) return <Navigate to="/auto" replace={true} />
     return (
         <main className={styles.main}>
