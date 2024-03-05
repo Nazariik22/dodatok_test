@@ -21,156 +21,329 @@ const initialState = {
             },
             test: [
                 {
-              
                     id: 1,
-                    title: "Test1",
-                    title_text: "Test_title_1",
-                    game: [
-                        { personName: "Софія Леміщак", number: 1 },
-                        { personName: "Олена Леміщак", number: 3 },
-                        { personName: "Ковалів Руслана", number: 2 },
-                        { personName: "Козіцький Роман", number: 4 },
-                        { personName: " Романюк Юрій", number: 4 },
-                        { personName: " Смага Олександр", number: 1 },
-                        { personName: "Чупель Олександр", number: 1 },
-                    ],
-                    questions: [
-                        {
-                            id: 0,
-                            text: "t1",
-                            value: false,
-                            questions_items: [
-                                {
-                                    id_item: 0,
-                                    value: false,
-                                    text_question: "1",
-                                    cheked: false,
-                                },
-                                {
-                                    id_item: 1705919360088,
-                                    value: true,
-                                    text_question: "2",
-                                    cheked: false,
-                                },
-                                {
-                                    id_item: 1705919360920,
-                                    value: false,
-                                    text_question: "3",
-                                    cheked: false,
-                                }
-                            ]
-                        },
-                        {
-                            id: 0,
-                            text: "t1",
-                            value: false,
-                            questions_items: [
-                                {
-                                    id_item: 0,
-                                    value: false,
-                                    text_question: "1",
-                                    cheked: false,
-                                },
-                                {
-                                    id_item: 1705919360088,
-                                    value: true,
-                                    text_question: "4",
-                                    cheked: false,
-                                },
-                                {
-                                    id_item: 1705919360920,
-                                    value: false,
-                                    text_question: "3",
-                                    cheked: false,
-                                }
-                            ]
-                        },
-                        {
-                            id: 0,
-                            text: "t1",
-                            value: false,
-                            questions_items: [
-                                {
-                                    id_item: 0,
-                                    value: false,
-                                    text_question: "1",
-                                    cheked: false,
-                                },
-                                {
-                                    id_item: 1705919360088,
-                                    value: true,
-                                    text_question: "2",
-                                    cheked: false,
-                                },
-                                {
-                                    id_item: 1705919360920,
-                                    value: false,
-                                    text_question: "3",
-                                    cheked: false,
-                                }
-                            ]
-                        },
-                        {
-                            id: 1705919360678,
-                            text: "t2",
-                            value: true,
-                            questions_items: [
-                                {
-                                    id_item: 0,
-                                    value: true,
-                                    text_question: "1",
-                                    cheked: false,
-                                },
-                                {
-                                    id_item: 1705919360367,
-                                    value: true,
-                                    text_question: "2",
-                                    cheked: false,
-                                },
-                                {
-                                    id_item: 1705919360434,
-                                    value: false,
-                                    text_question: "3",
-                                    cheked: false,
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    id: 1705926740705,
-                    title: "Test2",
-                    title_text: "Title_2",
-                    game: [
-
-                    ],
-                    questions: [
-                        {
-                            id: 0,
-                            text: "ww",
-                            value: false,
-                            questions_items: [
-                                {
-                                    id_item: 0,
-                                    value: false,
-                                    text_question: "www",
-                                    cheked: false,
-                                },
-                                {
-                                    id_item: 1705926740032,
-                                    value: false,
-                                    text_question: "aaa",
-                                    cheked: false,
-                                },
-                                {
-                                    id_item: 1705926740789,
-                                    value: false,
-                                    text_question: "zzz",
-                                    cheked: false,
-                                }
-                            ]
-                        }
-                    ]
+                        title: "HTML CSS",
+                            title_text: "Тест на знання верстки",
+                                game: [
+                                    { personName: "Софія Леміщак", number: 10 },
+                                    { personName: "Олена Леміщак", number: 5 },
+                                    { personName: "Ковалів Руслана", number: 4 },
+                                    { personName: "Козіцький Роман", number: 4 },
+                                    { personName: " Романюк Юрій", number: 4 },
+                                    { personName: " Смага Олександр", number: 9 },
+                                    { personName: "Чупель Олександр", number: 9 },
+                                ],
+                                    questions: [
+                                        {
+                                            id: 0,
+                                            text: "Мова розмітку гіпертексту - це",
+                                            value: false,
+                                            questions_items: [
+                                                {
+                                                    id_item: 0,
+                                                    value: false,
+                                                    text_question: "сукупність команд для настраювання Інтернету  ",
+                                                    cheked: false
+                                                },
+                                                {
+                                                    id_item: 1709628620118,
+                                                    value: false,
+                                                    text_question: "спеціальні команди для створення зв'язку між певними веб-сторінками",
+                                                    cheked: false
+                                                },
+                                                {
+                                                    id_item: 1709628620764,
+                                                    value: false,
+                                                    text_question: "сукупність та правила розташування спеціальних кодів, які керують формування, вставленням ілюстрацій, таблиць і зв'язком з іншими документами",
+                                                    cheked: false
+                                                },
+                                                {
+                                                    id_item: 1709628620518,
+                                                    value: true,
+                                                    text_question: " спеціальні команди та правила призначені для створення веб-сторінок",
+                                                    cheked: false
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            id: 1709628620572,
+                                            text: " Тег- це",
+                                            value: false,
+                                            questions_items: [
+                                                {
+                                                    id_item: 0,
+                                                    value: true,
+                                                    text_question: "код для визначення структури веб-сторінок",
+                                                    cheked: false
+                                                },
+                                                {
+                                                    id_item: 1709628680851,
+                                                    value: false,
+                                                    text_question: "команда у мові HTML",
+                                                    cheked: false
+                                                },
+                                                {
+                                                    id_item: 1709628680420,
+                                                    value: false,
+                                                    text_question: "будь-яке текстове повідомлення, що розташоване в кутових дужках",
+                                                    cheked: false
+                                                },
+                                                {
+                                                    id_item: 1709628680898,
+                                                    value: false,
+                                                    text_question: "настроювання вигляду частини веб-сторінки за допомогою спеціального коду",
+                                                    cheked: false
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            id: 1709628680557,
+                                            text: " Атрибут- це",
+                                            value: false,
+                                            questions_items: [
+                                                {
+                                                    id_item: 0,
+                                                    value: true,
+                                                    text_question: " характеристика тегу, що впливає на створюваний ним ефект",
+                                                    cheked: false
+                                                },
+                                                {
+                                                    id_item: 1709628680582,
+                                                    value: false,
+                                                    text_question: "характеристика тегу, що вивчає місце його розташування в HTML- документі",
+                                                    cheked: false
+                                                },
+                                                {
+                                                    id_item: 1709628740129,
+                                                    value: false,
+                                                    text_question: "характеристика кольорів тексту та тла веб-сторінки",
+                                                    cheked: false
+                                                },
+                                                {
+                                                    id_item: 1709628740066,
+                                                    value: false,
+                                                    text_question: " властивість тегу",
+                                                    cheked: false
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            id: 1709628740268,
+                                            text: " Тег <а> призначений для :",
+                                            value: false,
+                                            questions_items: [
+                                                {
+                                                    id_item: 0,
+                                                    value: false,
+                                                    text_question: "позначення нового абзацу",
+                                                    cheked: false
+                                                },
+                                                {
+                                                    id_item: 1709628740215,
+                                                    value: true,
+                                                    text_question: "створення гіперпосилання",
+                                                    cheked: false
+                                                },
+                                                {
+                                                    id_item: 1709628740823,
+                                                    value: false,
+                                                    text_question: "позначення тексту як заголову",
+                                                    cheked: false
+                                                },
+                                                {
+                                                    id_item: 1709628740909,
+                                                    value: false,
+                                                    text_question: "позначення нового абзацу",
+                                                    cheked: false
+                                                },
+                                                {
+                                                    id_item: 1709628740480,
+                                                    value: false,
+                                                    text_question: " позначення заголовка для таблиці",
+                                                    cheked: false
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            id: 1709628800209,
+                                            text: "Контент - це",
+                                            value: false,
+                                            questions_items: [
+                                                {
+                                                    id_item: 0,
+                                                    value: false,
+                                                    text_question: "одиниця вимірювання інформації",
+                                                    cheked: false
+                                                },
+                                                {
+                                                    id_item: 1709628800883,
+                                                    value: true,
+                                                    text_question: "інформаційне наповнення сайту",
+                                                    cheked: false
+                                                },
+                                                {
+                                                    id_item: 1709628800698,
+                                                    value: false,
+                                                    text_question: "об'єм інформації, що передається комп'ютерною мережею",
+                                                    cheked: false
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            id: 1709628800182,
+                                            text: " За допомогою якого тега слід розділяти абзаци?",
+                                            value: true,
+                                            questions_items: [
+                                                {
+                                                    id_item: 0,
+                                                    value: true,
+                                                    text_question: " <p>",
+                                                    cheked: false
+                                                },
+                                                {
+                                                    id_item: 1709628800626,
+                                                    value: true,
+                                                    text_question: " <br>",
+                                                    cheked: false
+                                                },
+                                                {
+                                                    id_item: 1709628800207,
+                                                    value: false,
+                                                    text_question: "<paragraph>",
+                                                    cheked: false
+                                                },
+                                                {
+                                                    id_item: 1709628860812,
+                                                    value: false,
+                                                    text_question: "<abzac>",
+                                                    cheked: false
+                                                },
+                                                {
+                                                    id_item: 1709628860569,
+                                                    value: false,
+                                                    text_question: " <q>",
+                                                    cheked: false
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            id: 1709628860792,
+                                            text: " Які теги і в якій послідовності обов'язково повинні бути присутні на будь-якій веб-сторінці?",
+                                            value: false,
+                                            questions_items: [
+                                                {
+                                                    id_item: 0,
+                                                    value: true,
+                                                    text_question: " <html><head></head><body></body></html>",
+                                                    cheked: false
+                                                },
+                                                {
+                                                    id_item: 1709628860330,
+                                                    value: false,
+                                                    text_question: "<html><title></title><body><b></body></html>",
+                                                    cheked: false
+                                                },
+                                                {
+                                                    id_item: 1709628860864,
+                                                    value: false,
+                                                    text_question: "<head><html><strong></html><body></title><body></head>",
+                                                    cheked: false
+                                                },
+                                                {
+                                                    id_item: 1709628860563,
+                                                    value: false,
+                                                    text_question: "<body><html></body></title><strike>",
+                                                    cheked: false
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            id: 1709628860421,
+                                            text: "В яких дужках записуються HTML теги?",
+                                            value: false,
+                                            questions_items: [
+                                                {
+                                                    id_item: 0,
+                                                    value: false,
+                                                    text_question: "{ }",
+                                                    cheked: false
+                                                },
+                                                {
+                                                    id_item: 1709628920742,
+                                                    value: true,
+                                                    text_question: "< >",
+                                                    cheked: false
+                                                },
+                                                {
+                                                    id_item: 1709628920002,
+                                                    value: false,
+                                                    text_question: "( )",
+                                                    cheked: false
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            id: 1709628920049,
+                                            text: " Що означає похила лінія / на початку тега ? ",
+                                            value: false,
+                                            questions_items: [
+                                                {
+                                                    id_item: 0,
+                                                    value: false,
+                                                    text_question: "Не використовувати тег",
+                                                    cheked: false
+                                                },
+                                                {
+                                                    id_item: 1709628920021,
+                                                    value: true,
+                                                    text_question: " Закриваючий дію тег",
+                                                    cheked: false
+                                                },
+                                                {
+                                                    id_item: 1709628920932,
+                                                    value: false,
+                                                    text_question: "Відкриваючий дію тег",
+                                                    cheked: false
+                                                },
+                                                {
+                                                    id_item: 1709628920842,
+                                                    value: false,
+                                                    text_question: "Коментар",
+                                                    cheked: false
+                                                }]
+                                        },
+                                        {
+                                            id: 1709628920606,
+                                            text: " Який з рядків змінить колір тексту на червоний для всіх тегів <p>",
+                                            value: true,
+                                            questions_items: [
+                                                {
+                                                    id_item: 0,
+                                                    value: true,
+                                                    text_question: " p {color: red}",
+                                                    cheked: false
+                                                },
+                                                {
+                                                    id_item: 1709628980445,
+                                                    value: false,
+                                                    text_question: ".p {color: red}",
+                                                    cheked: false
+                                                },
+                                                {
+                                                    id_item: 1709628980764,
+                                                    value: true,
+                                                    text_question: "p {color: #f00}",
+                                                    cheked: false
+                                                },
+                                                {
+                                                    id_item: 1709628980550,
+                                                    value: false,
+                                                    text_question: " #p {color: red}",
+                                                    cheked: false
+                                                }
+                                            ]
+                                        }
+                                    ]
                 }
             ],
             about: "Учениця Бродівської гімназії ім. І. Труша",
@@ -315,8 +488,8 @@ const windowAC = (id) => ({
     id: id
 })
 const closeWindowAC = () => ({
-    type:CLOSEWINDOW,
-   
+    type: CLOSEWINDOW,
+
 })
 const uppDataAC = (data) => ({
     type: UPPDATA,
@@ -354,7 +527,7 @@ const deleteTestUserAC = (id, test_id) => ({
     test_id: test_id,
 })
 export {
-    personReducser, windowAC,closeWindowAC,
+    personReducser, windowAC, closeWindowAC,
     uppDataAC, uppdataUserInfoAC, addResaltGameAC,
     deleteTestUserAC,
     addTestAC, adDUserAC, loginAC

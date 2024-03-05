@@ -1,0 +1,40 @@
+const mongoose = require('mongoose');
+
+const { Schema } = mongoose;
+
+const personSchema = new Schema({
+    id: { type: Number, required: true },
+    img: { type: String, default: null },
+    userInfo: {
+        login: { type: String, required: true },
+        password: { type: String, required: true },
+        sernameName: { type: String, required: true },
+        tel: { type: String, required: true },
+        email: { type: String, required: true },
+    },
+    test: [{
+        id: { type: Number, required: true },
+        title: { type: String, required: true },
+        title_text: { type: String, required: true },
+        game: [{
+            personName: { type: String, required: true },
+            number: { type: Number, required: true },
+        }],
+        questions: [{
+            id: { type: Number, required: true },
+            text: { type: String, required: true },
+            value: { type: Boolean, required: true },
+            questions_items: [{
+                id_item: { type: Number, required: true },
+                value: { type: Boolean, required: true },
+                text_question: { type: String, required: true },
+                cheked: { type: Boolean, required: true },
+            }],
+        }],
+    }],
+    about: { type: String, required: true },
+});
+
+const PersonModel = mongoose.model('Person', personSchema);
+
+module.exports = PersonModel;

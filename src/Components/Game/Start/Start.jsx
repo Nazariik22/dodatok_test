@@ -7,14 +7,14 @@ const Start = (props) => {
     const dispatch = useDispatch();
     return (
         <main className={styles.main}>
-            <QRCodeSVG value={props.urlInfo.url}
+            <QRCodeSVG value={`https://brodygsl.netlify.app${props.urlInfo.url}`}
                 bgColor="#ffffff"
                 fgColor="#000"
                 size={200} />
             <section className={styles.section}>
                 <p>{props.test.title}</p>
                 <p>{props.test.title_text}</p>
-                <p>Посилання: {props.urlInfo.url}</p>
+                <p>Посилання: https://brodygsl.netlify.app{props.urlInfo.url}</p>
                 <div>Прізвище та ім'я</div>
                 <input type="text"
                     value={props.name}
